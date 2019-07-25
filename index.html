@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>太极图案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        /* 给太极加一个动画 */
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #八卦 {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            /* animation: x 30s; */
+            /* animation: x 30s infinite; */
+            /* animation: x 1s infinite; */
+            animation: x 20s infinite linear;
+            box-shadow: 0px 0px 8px 6px rgba(191, 191, 191, 1);
+            /* 这个阴影直接用 box shadow generator谷歌就可以复制 */
+        }
+
+        @media (max-width:500px) {
+            #八卦 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        #八卦>div:first-child {
+            width: 50%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+        }
+
+        #八卦>div:nth-child(2) {
+            width: 50%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+        }
+
+        #八卦>div:nth-child(3) {
+            width: 50%;
+            height: 50%;
+            background-color: #000;
+            position: absolute;
+            right: 50%;
+            margin-right: -100px;
+            border-radius: 50%;
+            /* z-index: 1; */
+        }
+
+        @media(max-width:500px) {
+            #八卦>div:nth-child(3) {
+                margin-right: -50px;
+            }
+        }
+
+        #八卦>div:nth-child(4) {
+            width: 50%;
+            height: 50%;
+            background-color: #fff;
+            position: absolute;
+            right: 50%;
+            bottom: 0;
+            margin-right: -100px;
+            border-radius: 50%;
+            /* z-index: 1; */
+        }
+
+        @media(max-width:500px) {
+            #八卦>div:nth-child(4) {
+                margin-right: -50px;
+            }
+        }
+
+        #八卦>div:nth-child(5) {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            position: absolute;
+            top: 75px;
+            right: 50%;
+            margin-right: -25px;
+            border-radius: 50%;
+            /* z-index: 1; */
+        }
+
+        @media(max-width:500px) {
+            #八卦>div:nth-child(5) {
+                width: 25px;
+                height: 25px;
+                top: 37.5px;
+                margin-right: -12.5px;
+
+            }
+        }
+
+        #八卦>div:nth-child(6) {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            position: absolute;
+            bottom: 75px;
+            right: 50%;
+            margin-right: -25px;
+            border-radius: 50%;
+            /* z-index: 1; */
+        }
+
+        @media(max-width:500px) {
+            #八卦>div:nth-child(6) {
+                width: 25px;
+                height: 25px;
+                bottom: 37.5px;
+                margin-right: -12.5px;
+
+            }
+        }
+
+        #八卦-wrapper {
+            margin: 0 auto;
+            height: 100vh;
+            /*viewpoint height*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 三行实现水平垂直居中 */
+            flex-direction: column;
+            /* flex的特点使里面的内容垂直排列 */
+        }
+
+        #八卦-描述 {
+            margin-top: 1em;
+            /* em就是一个字的宽高 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id='八卦-wrapper'>
+        <div id='八卦'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id='八卦-描述'>道可道，非常道</div>
+    </div>
+
+</body>
+
+</html>
